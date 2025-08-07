@@ -1,7 +1,7 @@
 name: Test react-project
 on: push
 jobs:
-  tests:
+  tets:
     runs-on: ubuntu-latest
     steps:
       - name: Get code
