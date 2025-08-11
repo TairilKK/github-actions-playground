@@ -26,13 +26,13 @@ jobs:
         run: npm ci
         working-directory: ./node-express-project
       - name: Run server
-        run: npm start & npx wait-on http://127.0.0.1:XYZ
+        run: npm start & npx wait-on http://127.0.0.1:$PORT
         working-directory: ./node-express-project
       - name: Run tests
         run: npm test
         working-directory: ./node-express-project
       - name: Output information
-        run: echo "..."
+        run: echo "MONGODB_USERNAME ${{env.MONGODB_USERNAME}}"
         working-directory: ./node-express-project
   deploy:
     needs: test
@@ -40,5 +40,5 @@ jobs:
     steps:
       - name: Output information
         run: |
-          echo "..."
+          echo "MONGODB_USERNAME ${{env.MONGODB_USERNAME}}"
         working-directory: ./node-express-project
