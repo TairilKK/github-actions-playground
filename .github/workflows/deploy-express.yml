@@ -39,6 +39,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Output information
-        run: |
-          echo "MONGODB_USERNAME ${{env.MONGODB_USERNAME}}"
+        run:
+          echo "MONGODB_USERNAME is not seen here"
+          # echo "MONGODB_USERNAME ${{env.MONGODB_USERNAME}}"
         working-directory: ./node-express-project
